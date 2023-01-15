@@ -11,6 +11,15 @@ export default function TextForm(props) {
   let handlechange = (event)=>{
     setText(event.target.value);
   };
+  let handleClear = (event)=>{
+    setText("");
+  };
+  let handleInsert = (event)=>{
+    setText(text.split(" ").join("_"));
+  };
+  let handleRemove = (event)=>{
+    setText(text.split("_").join(" "));
+  };
   return (
     <>
     <div className='container my-3'>
@@ -20,6 +29,9 @@ export default function TextForm(props) {
         </div>
         <button className="btn btn-primary mx-2" onClick={handleUp}>Uppercase</button>
         <button className="btn btn-primary mx-2" onClick={handleDown}>Lowercase</button>
+        <button className="btn btn-primary mx-2" onClick={handleClear}>Clear</button>
+        <button className="btn btn-primary mx-2" onClick={handleInsert}>Insert _</button>
+        <button className="btn btn-primary mx-2" onClick={handleRemove}>Remove _</button>
     </div>
     <div className="container my-2">
         <h1>Yout Text Summary</h1>
