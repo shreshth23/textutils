@@ -4,25 +4,31 @@ export default function TextForm(props) {
   const [text, setText] = useState("Sample Text");
   let handleUp = ()=>{
     setText(text.toUpperCase());
+    props.showAlert("Converted to UpperCase !","success");
   };
   let handleDown = ()=>{
     setText(text.toLowerCase());
+    props.showAlert("Converted to LowerCase !","success");
   };
   let handlechange = (event)=>{
     setText(event.target.value);
   };
   let handleClear = (event)=>{
     setText("");
+    props.showAlert("TextBox Cleared !","success");
   };
   let handleInsert = (event)=>{
     setText(text.split(" ").join("_"));
+    props.showAlert("_ inserted !","success");
   };
   let handleRemove = (event)=>{
     setText(text.split("_").join(" "));
+    props.showAlert("_ removed !","success");
   };
   let handleCopy = (event)=>{
     let text = document.getElementById("myBox")
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied to clipboard!","success");
   };
   return (
     <>
