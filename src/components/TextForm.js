@@ -20,6 +20,10 @@ export default function TextForm(props) {
   let handleRemove = (event)=>{
     setText(text.split("_").join(" "));
   };
+  let handleCopy = (event)=>{
+    let text = document.getElementById("myBox")
+    navigator.clipboard.writeText(text.value);
+  };
   return (
     <>
     <div className='container my-3'>
@@ -32,6 +36,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-2" onClick={handleClear}>Clear</button>
         <button className="btn btn-primary mx-2" onClick={handleInsert}>Insert _</button>
         <button className="btn btn-primary mx-2" onClick={handleRemove}>Remove _</button>
+        <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy</button>
     </div>
     <div className="container my-2">
         <h1>Yout Text Summary</h1>
