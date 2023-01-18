@@ -42,10 +42,11 @@ function App() {
     <Router>
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
       <Alert alert={alert}/>
-      <Routes>
+      {/* <TextForm heading="Enter the heading to analyze: " mode={mode} showAlert={showAlert} /> */}
+      <Routes> 
         <Route path='/textutils' element={<TextForm heading="Enter the heading to analyze: " mode={mode} showAlert={showAlert} />} />
         <Route path='/' element={<TextForm heading="Enter the heading to analyze: " mode={mode} showAlert={showAlert} />} />
-        <Route path='aboutus' element={<AboutUs />} />       
+        <Route path='aboutus' element={<AboutUs mode={mode} />} />        
       </Routes>
     </Router>
     </>
